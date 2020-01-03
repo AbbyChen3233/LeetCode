@@ -1,0 +1,14 @@
+#method
+class Solution:
+    def isHappy(self,n):
+        while n != 1:
+            num = len(str(n))
+            total = 0
+            for i in range(num):
+                pos = n%(10**(i+1))//(10**i)
+                total += pos**2
+            n = total
+        if n == 1:
+            return True
+        else:
+            return False
